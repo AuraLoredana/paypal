@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import {TracksModel} from './models/tracks.model';
 import {CapitolModel} from './models/capitol.model';
+import {HttpClient} from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root'
@@ -8,9 +9,22 @@ import {CapitolModel} from './models/capitol.model';
 export class FavoriteService {
   private favouriteQuotes: Array<TracksModel> = new Array<TracksModel>();
   private favouriteQuotesCapitol: Array<CapitolModel> = new Array<CapitolModel>();
+  constructor(public http: HttpClient) {
+    console.log('Hello FavoriteProvider Provider');
+    this.getFavouritesQuotes();
+    this.getFavouritesQuotesCapitol();
+    // this.storage.get('favorites').then(fav => {
+    //   this.favouriteQuotes = fav;
+    // });
 
+  }
   addQuoteToFavourites(track: TracksModel) {
-    this.favouriteQuotes.push(track);
+    const position = this.favouriteQuotes.findIndex((quoteElement: TracksModel) => {
+      return quoteElement.id === track.id;
+    });
+    if (position < 0) {
+      this.favouriteQuotes.push(track);
+    }
   }
 
   removeQuoteFromFavourites(track: TracksModel) {

@@ -21,7 +21,6 @@ import { FavoritesComponent } from './favorites/favorites.component';
     NgxPayPalModule,
     HttpClientModule
   ],
-  providers: [HttpClientModule],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
