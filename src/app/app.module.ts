@@ -5,17 +5,23 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import {FormsModule} from '@angular/forms';
 import { NgxPayPalModule } from 'ngx-paypal';
+import {MusicLibComponent} from './music-lib/music-lib.component';
+import {HttpClientModule} from '@angular/common/http';
+import { FavoritesComponent } from './favorites/favorites.component';
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    MusicLibComponent,
+    FavoritesComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    NgxPayPalModule
+    NgxPayPalModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [HttpClientModule],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

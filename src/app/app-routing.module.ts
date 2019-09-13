@@ -1,7 +1,18 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import {MusicLibComponent} from './music-lib/music-lib.component';
+import {FavoritesComponent} from './favorites/favorites.component';
 
-const routes: Routes = [];
+export const routes: Routes = [
+  {
+    path: '',
+    component: MusicLibComponent,
+  },
+  {
+    path: 'favorites',
+    component: FavoritesComponent,
+  },
+];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

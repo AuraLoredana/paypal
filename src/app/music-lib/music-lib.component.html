@@ -1,0 +1,36 @@
+<div>
+  <div *ngFor="let item of tracks">
+    <strong>{{ item.title }} </strong>
+    <div>
+    <span>
+      <button
+        *ngIf="!isFavorite(item)"
+        (click)="onAddToFavourite(item)">Favorite</button>
+      <button
+        *ngIf="isFavorite(item)"
+        color="danger"
+        (click)="onRemoveFromFavourite(item)">Unfavorite</button>
+    </span>
+    </div>
+
+  </div>
+
+
+  <div *ngFor="let it of tracks">
+    <strong>{{ it.capitol.title }} </strong>
+    <div>
+    <span>
+      <button
+        *ngIf="!isFavoriteCapitol(it.capitol)"
+        (click)="onAddToFavouriteCapitol(it.capitol)">Favorite</button>
+      <button
+        *ngIf="isFavoriteCapitol(it.capitol)"
+        color="danger"
+        (click)="onRemoveFromFavouriteCapitol(it)">Unfavorite</button>
+    </span>
+    </div>
+  </div>
+  <button
+    (click)="goToFavPage()">See Favorites</button>
+
+</div>

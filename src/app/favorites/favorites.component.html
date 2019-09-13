@@ -1,0 +1,35 @@
+<div>
+
+  <div>
+    <h1>Favourites tracks</h1>
+  </div>
+
+</div>
+
+
+<div>
+
+    <span *ngFor="let quote of tracks">
+
+        <h2>{{ quote.title}}</h2>
+
+
+      <button
+        color="danger"
+        (click)="onRemoveFromFavourites(quote)">
+          Delete
+        </button>
+    </span>
+
+  <span *ngFor="let quote of tracksCapitol">
+
+        <h2>{{ quote.title}}</h2>
+
+
+      <button
+        color="danger"
+        (click)="onRemoveFromFavouritesCapitol(quote)">
+          Delete
+        </button>
+    </span>
+</div>
